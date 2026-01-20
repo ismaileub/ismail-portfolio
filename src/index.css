@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,FILL@0..1&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom glass card styling */
+.glass-card {
+  @apply bg-white/[0.03] backdrop-blur-[10px] border border-white/10;
+}
+
+.dark .glass-card {
+  @apply bg-black/[0.4];
+}
+
+/* Mesh gradient background */
+.mesh-gradient {
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(273, 80%, 40%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(280, 80%, 30%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(270, 70%, 20%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(260, 60%, 10%, 0.2) 0px, transparent 50%);
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image: linear-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Text gradient effect */
+.text-gradient {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent;
+}
+
+/* Button gradient styling */
+.btn-gradient {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600;
+}
+
+/* Orbit container for tech icons */
+.orbit-container {
+  @apply relative w-[450px] h-[450px] flex items-center justify-center;
+}
+
+/* Circular tech icons */
+.tech-icon-circular {
+  @apply absolute w-11 h-11 rounded-full flex items-center justify-center bg-black/60 backdrop-blur z-20;
+}
