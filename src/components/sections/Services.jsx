@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { config } from "../../data/config";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,40 +26,7 @@ const itemVariants = {
 };
 
 export default function Services() {
-  const services = [
-    {
-      icon: "speed",
-      title: "Speed & Optimization",
-      description:
-        "Improving load times, SEO, and overall user experience through code and asset optimization.",
-      color: "orange",
-      colorCode: "text-orange-500",
-    },
-    {
-      icon: "psychology",
-      title: "Full-Stack Solutions",
-      description:
-        "End-to-end development from frontend UI to backend infrastructure and deployment.",
-      color: "green",
-      colorCode: "text-green-500",
-    },
-    {
-      icon: "database",
-      title: "Backend Development",
-      description:
-        "Developing secure and scalable server-side logic, APIs, and database integration.",
-      color: "pink",
-      colorCode: "text-pink-500",
-    },
-    {
-      icon: "code_blocks",
-      title: "Frontend Development",
-      description:
-        "Building responsive, user-friendly web interfaces using modern frameworks like React or Vue.",
-      color: "teal",
-      colorCode: "text-teal-500",
-    },
-  ];
+  const { services } = config;
 
   return (
     <section
@@ -99,14 +67,13 @@ export default function Services() {
             variants={itemVariants}
             whileHover={{ y: -8 }}
           >
-            {/* Icon */}
             <motion.div
               className={`mb-8 relative ${service.colorCode}`}
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
               <span
-                className={`material-symbols-outlined text-6xl ${service.colorCode} drop-shadow-[0_0_15px_rgba(${
+                className={`material-symbols-outlined !text-6xl ${service.colorCode} drop-shadow-[0_0_15px_rgba(${
                   service.color === "orange"
                     ? "249,115,22"
                     : service.color === "green"
@@ -115,6 +82,7 @@ export default function Services() {
                         ? "236,72,153"
                         : "20,184,166"
                 },0.4)]`}
+                style={{ fontSize: "60px" }}
               >
                 {service.icon}
               </span>

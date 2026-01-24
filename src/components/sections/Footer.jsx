@@ -80,7 +80,7 @@ const Footer = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <h4 className="text-3xl font-bold leading-none tracking-tight bg-gradient-to-r from-primary to-pink-500 bg-clip-text text-transparent">
-                  Ismail&lt;/&gt;
+                  ISMAIL&lt;/&gt;
                 </h4>
                 <motion.div
                   className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary/20 rounded-full"

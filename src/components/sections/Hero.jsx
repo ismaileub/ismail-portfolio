@@ -2,40 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { useTheme } from "../../context/ThemeContext";
+import { config } from "../../data/config";
 
 export default function Hero({ scrollToSection }) {
   const { isDark, toggleTheme } = useTheme();
-
-  const services = [
-    {
-      icon: "bolt",
-      title: "Lightning Fast",
-      description:
-        "Optimized performance with minimal load times ensuring users stay engaged",
-      color: "yellow",
-    },
-    {
-      icon: "code",
-      title: "Full-Stack Developer",
-      description:
-        "Complete end-to-end development from database to user interface",
-      color: "blue",
-    },
-    {
-      icon: "database",
-      title: "Backend Specialist",
-      description:
-        "Robust server-side solutions with scalable architecture and security",
-      color: "purple",
-    },
-    {
-      icon: "palette",
-      title: "Frontend Artisan",
-      description:
-        "Beautiful, responsive, and interactive user interfaces with animations",
-      color: "green",
-    },
-  ];
+  const { personal, social } = config;
 
   return (
     <>
@@ -52,7 +23,7 @@ export default function Hero({ scrollToSection }) {
             whileHover={{ scale: 1.05 }}
           >
             <span className="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-              Ismail<span className="text-primary">&lt;/&gt;</span>
+              {personal.name}<span className="text-primary">&lt;/&gt;</span>
             </span>
             <Button
               onClick={toggleTheme}
@@ -103,27 +74,27 @@ export default function Hero({ scrollToSection }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div className="inline-flex items-center px-4 py-2 rounded-full glass-card text-sm font-medium text-primary mb-6">
-              <motion.span
-                className="w-2 h-2 rounded-full bg-primary mr-3"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-              ></motion.span>
-              Available for new projects
-            </motion.div>
+            {personal.available && (
+              <motion.div className="inline-flex items-center px-4 py-2 rounded-full glass-card text-sm font-medium text-primary mb-6">
+                <motion.span
+                  className="w-2 h-2 rounded-full bg-primary mr-3"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 0.8, repeat: Infinity }}
+                ></motion.span>
+                Available for new projects
+              </motion.div>
+            )}
 
             <motion.h1 className="font-display text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-              Hi, I'm Ismail
+              Hi, I'm {personal.name}
             </motion.h1>
 
             <motion.h2 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-8">
-              Full stack developer
+              {personal.role}
             </motion.h2>
 
             <motion.p className="text-lg text-slate-600 dark:text-slate-400 max-w-lg mb-10 leading-relaxed">
-              Crafting modern, responsive and user-friendly websites with
-              passion and precision. Transforming complex problems into elegant
-              digital experiences.
+              {personal.description}
             </motion.p>
 
             <motion.div className="flex flex-wrap items-center gap-6">
@@ -136,16 +107,16 @@ export default function Hero({ scrollToSection }) {
                 Download Resume
               </motion.a>
               <motion.div className="flex items-center gap-4">
-                {[{ icon: "mail" }, { icon: "badge" }].map((social, idx) => (
+                {[{ icon: "mail", href: social.email }, { icon: "badge", href: social.linkedin }].map((item, idx) => (
                   <motion.a
                     key={idx}
                     className="w-12 h-12 flex items-center justify-center rounded-full glass-card hover:bg-white/10 transition-colors"
-                    href="#"
+                    href={item.href}
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <span className="material-symbols-outlined">
-                      {social.icon}
+                      {item.icon}
                     </span>
                   </motion.a>
                 ))}

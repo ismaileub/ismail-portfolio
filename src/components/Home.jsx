@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white dark:bg-background-dark text-slate-900 dark:text-slate-50 transition-colors duration-300">
+    <div className="bg-white dark:bg-background-dark grid-pattern text-slate-900 dark:text-slate-50 transition-colors duration-300">
       <div ref={sections.home}>
         <Hero scrollToSection={scrollToSection} />
       </div>

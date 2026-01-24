@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { config } from "../../data/config";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
-
-  const socialLinks = [
-    { icon: "language", label: "Website", href: "#", color: "from-blue-400 to-cyan-500" },
-    { icon: "mail", label: "Email", href: "mailto:meriem@example.com", color: "from-red-400 to-pink-500" },
-    { icon: "phone", label: "WhatsApp", href: "https://wa.me/213123456789", color: "from-green-400 to-emerald-500" },
-    { icon: "badge", label: "LinkedIn", href: "https://linkedin.com/in/meriem", color: "from-blue-500 to-blue-700" },
-  ];
+  const socialLinks = config.contact.socials;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
