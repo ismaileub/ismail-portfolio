@@ -51,7 +51,7 @@ export const config = {
       {
         title: "Local Guide Platform",
         description:
-          "A comprehensive full-stack e-commerce solution features user authentication, product management, cart functionality, and payment gateway integration.",
+          "A comprehensive full-stack solution for tourist and  guides, featuring user authentication, tour management, cart functionality and payment gateway integration.",
         image:
           "https://res.cloudinary.com/duiwtyjee/image/upload/v1769274922/guide-web1_iesmph.png",
         links: {
@@ -60,25 +60,25 @@ export const config = {
         },
       },
       {
-        title: "Social Media Dashboard",
+        title: "Restaurant ",
         description:
-          "An analytics dashboard for social media management, aggregating data from multiple platforms into a unified interface with real-time updates.",
+          "A full-stack restaurant website featuring menu display, online ordering and admin management for food items.",
         image:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuBj6Wh_ch9vsYi7ZUsR-r-iOpmSfIsHdKibhfNiXc2l4ANLF-feezKzcUhYdCmRT7CgA0DbphaLgUlCHlvjfGIW_fWnw5XTUBfzHH5AAnvDYInXJbMHIqjab8ajXO7f6Kf7YnXQyDt0Yz9uGJJ0I_HfcZJOmLkZ2u9QuzXKUh1IHzHj1YYMdzDj-gE5nsLCzkHS2FwZNXOZMMMnA2NQQGiAHfkTepA6oQu3QA2qykgxcvgzz-N8s-VytCtyuVlRxijAfxSCMmzphyk",
+          "https://res.cloudinary.com/duiwtyjee/image/upload/v1769275845/food-paradise_goqlls.png",
         links: {
-          repo: "#",
-          demo: "#",
+          repo: "https://github.com/ismaileub/resturant-website-full-stack",
+          demo: "https://food-paradise-84029.web.app",
         },
       },
       {
-        title: "Project Management Tool",
+        title: "Explore Heaven",
         description:
-          "A collaborative tool for teams to track tasks, manage timelines, and communicate effectively. Built with real-time synchronization in mind.",
+          "A travel website focused on European destinations, featuring dynamic pages, Firebase authentication, responsive design, and engaging UI for exploring tours and places.",
         image:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuCJwovOM8FgTUnq_zLldyZfYZuaQuC1sjF4ZLJdSbReOAz1W1A1RHr6LAS9ihwNwF8S_mIM9UcfvKdUXwPqQ5VJLzJk0WXWwnxXLr0tAuvvuAnRFLnt_jFA5Cs5oDQSM2iio9mJ_L3HdmvSRndqPTYixTcmhFRjShBuKFzvnTnB0LcZDjQoPS4C_Utc0h37b-iol84s0PGFHhA4rLRtUD91lAkueYnYbTggkk48QV2iieFS_lbxEUCfDjN_lDvXAeUaXpwd6WtiNTk",
+          "https://res.cloudinary.com/duiwtyjee/image/upload/v1769278180/exploreHeaven_kqqjpj.png",
         links: {
-          repo: "#",
-          demo: "#",
+          repo: "https://github.com/ismaileub/travel-website-with-frontend-and-backend",
+          demo: "https://explore-heaven.web.app",
         },
       },
     ],
@@ -149,6 +149,30 @@ export const config = {
         links: {
           repo: "#",
           demo: "#",
+        },
+      },
+    ],
+    others: [
+      {
+        title: "Text Compression Web App",
+        description:
+          "A web application that compresses and decompresses text files using Huffman Coding, featuring file upload, download and preview of compressed binary data.",
+        image:
+          "https://res.cloudinary.com/duiwtyjee/image/upload/v1769279394/text-compression_udmplh.png",
+        links: {
+          repo: "https://github.com/ismaileub/text-compressor-using-huffman-coding-alorithm",
+          demo: "https://ismaileub.github.io/text-compressor-using-huffman-coding-alorithm",
+        },
+      },
+      {
+        title: "Hospital Management System CLI",
+        description:
+          "A command-line application developed as part of the OOP Sessional Course at European University of Bangladesh. Manages doctors, patients, pharmacy, and hospital facilities using core OOP principles in Java.",
+        image:
+          "https://res.cloudinary.com/duiwtyjee/image/upload/v1769279800/hospital-oop_pab223.png",
+        links: {
+          repo: "https://github.com/ismaileub/Hospital-Management-System",
+          demo: "#", // if any demo available
         },
       },
     ],

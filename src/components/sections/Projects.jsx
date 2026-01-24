@@ -33,6 +33,7 @@ export default function Projects() {
     { id: "fullStack", label: "Full Stack" },
     { id: "frontend", label: "Frontend" },
     { id: "backend", label: "Backend" },
+    { id: "others", label: "Others" },
   ];
 
   return (
