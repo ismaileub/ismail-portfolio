@@ -58,7 +58,7 @@ export default function Projects() {
           className="flex flex-wrap justify-center items-center gap-4"
           variants={containerVariants}
         >
-          {tabs.map((tab) => (
+          {tabs?.map((tab) => (
             <motion.button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
@@ -127,16 +127,22 @@ export default function Projects() {
               <div className="flex items-center gap-3">
                 <motion.a
                   href={project.links.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 border border-slate-300 dark:border-white/20 text-slate-700 dark:text-white py-3 rounded-full font-medium hover:bg-slate-100 dark:hover:bg-white/5 transition-colors text-sm"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <span className="material-symbols-outlined text-[20px]">code</span>
+                  <span className="material-symbols-outlined text-[20px]">
+                    code
+                  </span>
                   Repository
                 </motion.a>
 
                 <motion.a
                   href={project.links.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-full font-medium shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all text-sm"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.95 }}

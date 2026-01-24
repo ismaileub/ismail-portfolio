@@ -49,14 +49,14 @@ export const config = {
   projects: {
     fullStack: [
       {
-        title: "E-commerce Platform",
+        title: "Local Guide Platform",
         description:
           "A comprehensive full-stack e-commerce solution features user authentication, product management, cart functionality, and payment gateway integration.",
         image:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuDTC6Jyx1e_lumAX8CG3m6KH-RBaHABKLjCNgrNr-uOvTKaeoBdUfAEvvLTDsFhBPLL1sMoc3jPGQESdPykS3D-zKsc0Ew6vTznc4a7e8mC-JkU2Ffd389YMOUAFXnILwd63ws_6MxMRLT8GleaGLE_TwF2mGXFSm1hohC6E2WGulXGUMDu4-HGpulz7bn5fYW8TTLTaDNuKtNDIULADK53oDKy3SsAAmbKOKztXX9i8B3v638awdjysTm6B4bs5NPS4vJjNZGIDIE",
+          "https://res.cloudinary.com/duiwtyjee/image/upload/v1769274922/guide-web1_iesmph.png",
         links: {
-          repo: "#",
-          demo: "#",
+          repo: "https://github.com/ismaileub/tours-local-guide-frontend",
+          demo: "https://tour-guide-frontend-amber.vercel.app",
         },
       },
       {
