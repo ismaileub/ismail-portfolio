@@ -1,4 +1,8 @@
-# Meriem - Full Stack Developer Portfolio
+# Ismail - Full Stack Developer Portfolio
+
+## 🚀 Live Demo
+
+[View the live site here](https://ismail-portfolio-beta.vercel.app)
 
 A modern, responsive portfolio website built with React, Tailwind CSS, Vite, Framer Motion, and shadcn/ui components. Features smooth animations, dark mode toggle, and an interactive tech stack showcase.
 
@@ -53,11 +57,13 @@ portfolio/
 ## Installation
 
 1. Install dependencies:
+
 ```bash
 npm install
 ```
 
 2. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -73,7 +79,9 @@ npm run dev
 ## Customization
 
 ### Update Profile Information
+
 Edit `src/components/Portfolio.jsx`:
+
 - Change name from "Meriem" to your name
 - Update social links (GitHub, LinkedIn, Email)
 - Replace profile image URL
@@ -81,7 +89,9 @@ Edit `src/components/Portfolio.jsx`:
 - Modify hero text and description
 
 ### Customize Colors & Theme
+
 Edit `tailwind.config.js`:
+
 ```javascript
 colors: {
   primary: "#a855f7",  // Change purple to your preference
@@ -91,13 +101,17 @@ colors: {
 ```
 
 ### Adjust Animations
+
 Framer Motion animations can be customized in `Portfolio.jsx`:
+
 - Modify animation variants (duration, ease, delay)
 - Adjust stagger timings
 - Change transition properties
 
 ### Use shadcn/ui Components
+
 Additional shadcn/ui components can be added:
+
 ```bash
 # Run shadcn-ui CLI to add components
 npx shadcn-ui@latest add [component-name]
@@ -106,6 +120,7 @@ npx shadcn-ui@latest add [component-name]
 ## Theme Provider
 
 The project uses a custom `ThemeContext` for theme management with:
+
 - Local storage persistence
 - System preference detection
 - Seamless dark/light mode toggle
@@ -113,6 +128,7 @@ The project uses a custom `ThemeContext` for theme management with:
 ## Animations
 
 Powered by **Framer Motion**:
+
 - Staggered animations for list items
 - Floating effects on elements
 - Rotation animations for icons
@@ -122,11 +138,13 @@ Powered by **Framer Motion**:
 ## Deployment
 
 Build for production:
+
 ```bash
 npm run build
 ```
 
 Deploy the `dist` folder to:
+
 - **Vercel** (recommended for Next.js-like features)
 - **Netlify** (easy GitHub integration)
 - **GitHub Pages** (free static hosting)
