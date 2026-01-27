@@ -15,9 +15,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 lg:py-32 px-4 lg:px-40 container mx-auto"
+      className="relative py-10  lg:py-20 px-4 lg:px-40 container mx-auto"
     >
-      <div className="text-center mb-20 relative z-10">
+      <div className="text-center mb-10 relative z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
           About <span className="text-primary">Me</span>
         </h2>

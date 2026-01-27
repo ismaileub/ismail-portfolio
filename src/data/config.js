@@ -179,29 +179,35 @@ export const config = {
   },
   contact: {
     socials: [
-      {
-        icon: "language",
-        label: "Website",
-        href: "#",
-        color: "from-blue-400 to-cyan-500",
-      },
+      // {
+      //   icon: "language",
+      //   label: "Website",
+      //   href: "#",
+      //   color: "from-blue-400 to-cyan-500",
+      // },
       {
         icon: "mail",
         label: "Email",
-        href: "mailto:ismail@example.com",
+        href: "https://mail.google.com/mail/?view=cm&fs=1&to=ismail301515@gmail.com&su=Contact%20From%20Portfolio&body=Hello%20I%20want%20to%20contact%20you",
         color: "from-red-400 to-pink-500",
       },
       {
         icon: "phone",
         label: "WhatsApp",
-        href: "https://wa.me/213123456789",
+        href: "https://wa.me/8801866468997?text=Hello%20I%20want%20to%20contact%20you.",
         color: "from-green-400 to-emerald-500",
       },
       {
         icon: "badge",
         label: "LinkedIn",
-        href: "https://linkedin.com",
+        href: "https://www.linkedin.com/in/ismail-eub",
         color: "from-blue-500 to-blue-700",
+      },
+      {
+        icon: "code",
+        label: "GitHub",
+        href: "https://github.com/your-github-username",
+        color: "from-gray-700 to-gray-900",
       },
     ],
   },

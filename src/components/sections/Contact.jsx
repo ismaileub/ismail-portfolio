@@ -1,11 +1,35 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { MdEmail } from "react-icons/md";
+import { FaWhatsapp, FaLinkedin, FaGithub } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
+
 import { config } from "../../data/config";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [loading, setLoading] = useState(false);
   const socialLinks = config.contact.socials;
+
+  const getSocialIcon = (label) => {
+    switch (label) {
+      case "Email":
+        return MdEmail;
+      case "WhatsApp":
+        return FaWhatsapp;
+      case "LinkedIn":
+        return FaLinkedin;
+      case "GitHub":
+        return FaGithub;
+      default:
+        return MdEmail;
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,15 +39,39 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          date: new Date().toLocaleDateString(),
+        },
+        PUBLIC_KEY,
+      );
+
+      toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
       setLoading(false);
-    }, 1000);
+    }
   };
 
   return (
-    <section id="contact" className="relative py-20 lg:py-32 px-4 lg:px-40 container mx-auto">
+    <section
+      id="contact"
+      className="relative py-20 lg:py-32 px-4 lg:px-40 container mx-auto"
+    >
       <div className="text-center mb-20 relative z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
           Get In <span className="text-primary">Touch</span>
@@ -47,14 +95,21 @@ export default function Contact() {
               whileHover={{ x: 8 }}
             >
               <div className="glass-card p-6 rounded-2xl flex items-center gap-4 group-hover:shadow-lg transition-all">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.color} flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform`}>
-                  <span className="material-symbols-outlined">{social.icon}</span>
+                <div
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${social.color} flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform`}
+                >
+                  {(() => {
+                    const Icon = getSocialIcon(social.label);
+                    return <Icon className="w-6 h-6" />;
+                  })()}
                 </div>
                 <div>
                   <h4 className="font-bold text-lg group-hover:text-primary transition-colors text-white">
                     {social.label}
                   </h4>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Click to connect</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                    Click to connect
+                  </p>
                 </div>
               </div>
             </motion.a>
@@ -67,7 +122,9 @@ export default function Contact() {
           className="lg:col-span-2 space-y-6"
         >
           <div className="space-y-2">
-            <label className="block text-lg font-semibold text-white">Full Name</label>
+            <label className="block text-lg font-semibold text-white">
+              Full Name
+            </label>
             <input
               type="text"
               name="name"
@@ -80,7 +137,9 @@ export default function Contact() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-lg font-semibold text-white">Email Address</label>
+            <label className="block text-lg font-semibold text-white">
+              Email Address
+            </label>
             <input
               type="email"
               name="email"
@@ -93,7 +152,9 @@ export default function Contact() {
           </div>
 
           <div className="space-y-2">
-            <label className="block text-lg font-semibold text-white">Message</label>
+            <label className="block text-lg font-semibold text-white">
+              Message
+            </label>
             <textarea
               name="message"
               value={formData.message}

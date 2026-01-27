@@ -25,6 +25,20 @@ const itemVariants = {
   },
 };
 
+const gridVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+      delay: 0.6,
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("fullStack");
   const { projects } = config;
@@ -89,9 +103,10 @@ export default function Projects() {
         <motion.div
           key={activeTab}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
-          variants={containerVariants}
+          variants={gridVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >

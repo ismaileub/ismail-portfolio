@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Services from "./sections/Services";
@@ -9,6 +9,8 @@ import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 
 export default function Home() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
   const sections = {
     home: useRef(null),
     about: useRef(null),
@@ -24,6 +26,23 @@ export default function Home() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -50,6 +69,16 @@ export default function Home() {
         <Contact />
       </div>
       <Footer />
+
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white shadow-lg shadow-primary/40 hover:bg-primary/90 transition-all"
+          aria-label="Scroll to top"
+        >
+          <span className="material-symbols-outlined">arrow_upward</span>
+        </button>
+      )}
     </div>
   );
 }
