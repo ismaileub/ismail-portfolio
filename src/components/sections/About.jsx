@@ -41,7 +41,7 @@ export default function About() {
               <img
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full"
-                src="https://instagram.fdac198-2.fna.fbcdn.net/v/t51.75761-15/488641707_18043093400605035_800053857556079585_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzYwNDc2NzAyMDI1Mzk5NTI4OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjg2NHg4NjQuc2RyLkMzIn0%3D&_nc_ohc=Xk_lmfyKnCUQ7kNvwEmMPE4&_nc_oc=AdmB4NbrZ-Y0G4EYZ5mMaKER9kVobFHgWGDsL94YGFJEind6i-pYXrLEnRAc58oQvC0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fdac198-2.fna&_nc_gid=Lk8VgZc_oou_LODrPMxHhg&oh=00_AfprLoigIPjlAvtxYyAJI7oDailau6sU2wQXFYE59Dc3Fw&oe=69754068"
+                src="https://res.cloudinary.com/duiwtyjee/image/upload/v1769528300/488641707_18043093400605035_800053857556079585_n_bfaitq.jpg"
               />
             </motion.div>
           </div>
