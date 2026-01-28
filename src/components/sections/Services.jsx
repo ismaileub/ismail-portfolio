@@ -31,7 +31,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-20 lg:py-32 container mx-auto px-6 overflow-hidden"
+      className="relative py-5 lg:py-10  container mx-auto px-6 overflow-hidden"
     >
       <motion.div
         className="text-center mb-16 relative z-10"

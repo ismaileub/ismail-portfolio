@@ -1,6 +1,6 @@
 # Ismail - Full Stack Developer Portfolio
 
-## 🚀 Live Demo
+## Live Demo
 
 [View the live site here](https://ismail-portfolio-beta.vercel.app)
 

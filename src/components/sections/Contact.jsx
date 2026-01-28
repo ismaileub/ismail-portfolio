@@ -70,7 +70,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-20 lg:py-32 px-4 lg:px-40 container mx-auto"
+      className="relative py-5 lg:py-10 px-4 lg:px-40 container mx-auto"
     >
       <div className="text-center mb-20 relative z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
