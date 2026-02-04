@@ -34,7 +34,7 @@ export default function About() {
               transition={{ duration: 3, repeat: Infinity }}
             ></motion.div>
             <motion.div
-              className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1.5 bg-gradient-to-tr from-primary via-pink-500 to-purple-800 overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.4)]"
+              className=" hidden md:block relative w-72 h-72 md:w-96 md:h-96 rounded-full p-1.5 bg-gradient-to-tr from-primary via-pink-500 to-purple-800 overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.4)]"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >

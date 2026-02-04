@@ -1,4 +1,7 @@
+import resumeFile from "./Resume(ISMAIL).pdf";
+
 export const config = {
+  resume: resumeFile,
   personal: {
     name: "ISMAIL",
     role: "Full Stack Developer",

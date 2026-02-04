@@ -1,12 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+
 import { Button } from "../ui/button";
 import { useTheme } from "../../context/ThemeContext";
 import { config } from "../../data/config";
 
 export default function Hero({ scrollToSection }) {
   const { isDark, toggleTheme } = useTheme();
-  const { personal, social } = config;
+  const { personal, social, resume } = config;
 
   return (
     <>
@@ -23,7 +24,8 @@ export default function Hero({ scrollToSection }) {
             whileHover={{ scale: 1.05 }}
           >
             <span className="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-              {personal.name}<span className="text-primary">&lt;/&gt;</span>
+              {personal.name}
+              <span className="text-primary">&lt;/&gt;</span>
             </span>
             <Button
               onClick={toggleTheme}
@@ -99,7 +101,8 @@ export default function Hero({ scrollToSection }) {
 
             <motion.div className="flex flex-wrap items-center gap-6">
               <motion.a
-                href="#"
+                href={resume}
+                download
                 className="px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/25"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -107,7 +110,10 @@ export default function Hero({ scrollToSection }) {
                 Download Resume
               </motion.a>
               <motion.div className="flex items-center gap-4">
-                {[{ icon: "mail", href: social.email }, { icon: "badge", href: social.linkedin }].map((item, idx) => (
+                {[
+                  { icon: "mail", href: social.email },
+                  { icon: "badge", href: social.linkedin },
+                ].map((item, idx) => (
                   <motion.a
                     key={idx}
                     className="w-12 h-12 flex items-center justify-center rounded-full glass-card hover:bg-white/10 transition-colors"
