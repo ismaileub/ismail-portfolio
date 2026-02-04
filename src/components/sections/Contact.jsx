@@ -83,7 +83,6 @@ export default function Contact() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
-        {/* Social Links */}
         <div className="space-y-6">
           {socialLinks.map((social, idx) => (
             <motion.a
@@ -116,7 +115,6 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
           className="lg:col-span-2 space-y-6"

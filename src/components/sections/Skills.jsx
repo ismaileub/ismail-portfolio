@@ -1,5 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
+import { skillsData } from "../../data/skills";
+import { skillsImage } from "../../utils/skillImage";
+import { FaReact, FaNodeJs, FaDatabase, FaPalette } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiFramer,
+  SiRedux,
+  SiPostgresql,
+  SiMongodb,
+  SiGraphql,
+} from "react-icons/si";
 
 export default function Skills() {
   const primaryColor = ""; // Magenta primary from the design
@@ -10,8 +24,6 @@ export default function Skills() {
       className="relative py-20 lg:py-32 px-4 lg:px-40 overflow-hidden transition-colors duration-300"
     >
       {/* Light Leaks Background Elements */}
-      {/* <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] light-leak pointer-events-none opacity-50 dark:opacity-100"></div> */}
-      {/* <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] light-leak pointer-events-none opacity-50 dark:opacity-100"></div> */}
 
       <div className="max-w-[1200px] w-full mx-auto relative z-10">
         <div className="text-center mb-16">
@@ -25,24 +37,22 @@ export default function Skills() {
         </div>
 
         {/* Skills Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-20">
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 pb-5">
           {/* Frontend Block (8 columns) */}
           <div className="lg:col-span-8 glass-card rounded-2xl p-8 flex flex-col border border-primary/10 dark:border-white/10 shadow-lg dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] bg-white/50 dark:bg-[rgba(255,0,191,0.03)] backdrop-blur-xl">
             <div className="flex items-center gap-3 mb-8">
-              <span className="material-symbols-outlined text-[#ff00bf] text-3xl">
-                brush
-              </span>
+              <FaReact className="text-[#ff00bf] text-3xl" />
               <h2 className="text-slate-900 dark:text-white text-2xl font-bold tracking-tight">
                 Frontend Development
               </h2>
             </div>
+
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {/* Skill Tile: React */}
+              {/* React */}
               <div className="group flex flex-col gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 hover:border-[#ff00bf]/40 transition-all duration-300 shadow-sm dark:shadow-none">
                 <div className="flex items-center justify-between">
-                  <span className="material-symbols-outlined text-[#ff00bf] text-3xl transition-transform group-hover:scale-110">
-                    atm
-                  </span>
+                  <FaReact className="text-[#61DBFB] text-3xl transition-transform group-hover:scale-110" />
                   <span className="text-[10px] uppercase tracking-widest text-[#ff00bf] font-bold px-2 py-1 rounded bg-[#ff00bf]/10">
                     Advanced
                   </span>
@@ -58,16 +68,15 @@ export default function Skills() {
                       whileInView={{ width: "90%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
-              {/* Skill Tile: TypeScript */}
+
+              {/* TypeScript */}
               <div className="group flex flex-col gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 hover:border-[#ff00bf]/40 transition-all duration-300 shadow-sm dark:shadow-none">
                 <div className="flex items-center justify-between">
-                  <span className="material-symbols-outlined text-[#ff00bf] text-3xl transition-transform group-hover:scale-110">
-                    code
-                  </span>
+                  <SiTypescript className="text-[#3178C6] text-3xl transition-transform group-hover:scale-110" />
                   <span className="text-[10px] uppercase tracking-widest text-[#ff00bf] font-bold px-2 py-1 rounded bg-[#ff00bf]/10">
                     Expert
                   </span>
@@ -83,16 +92,15 @@ export default function Skills() {
                       whileInView={{ width: "95%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
-              {/* Skill Tile: Next.js */}
+
+              {/* Next.js */}
               <div className="group flex flex-col gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 hover:border-[#ff00bf]/40 transition-all duration-300 shadow-sm dark:shadow-none">
                 <div className="flex items-center justify-between">
-                  <span className="material-symbols-outlined text-[#ff00bf] text-3xl transition-transform group-hover:scale-110">
-                    layers
-                  </span>
+                  <SiNextdotjs className="text-[#000000] text-3xl transition-transform group-hover:scale-110" />
                   <span className="text-[10px] uppercase tracking-widest text-[#ff00bf] font-bold px-2 py-1 rounded bg-[#ff00bf]/10">
                     Advanced
                   </span>
@@ -108,16 +116,15 @@ export default function Skills() {
                       whileInView={{ width: "85%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
-              {/* Skill Tile: Tailwind */}
+
+              {/* Tailwind CSS */}
               <div className="group flex flex-col gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 hover:border-[#ff00bf]/40 transition-all duration-300 shadow-sm dark:shadow-none">
                 <div className="flex items-center justify-between">
-                  <span className="material-symbols-outlined text-[#ff00bf] text-3xl transition-transform group-hover:scale-110">
-                    palette
-                  </span>
+                  <SiTailwindcss className="text-[#06B6D4] text-3xl transition-transform group-hover:scale-110" />
                   <span className="text-[10px] uppercase tracking-widest text-[#ff00bf] font-bold px-2 py-1 rounded bg-[#ff00bf]/10">
                     Expert
                   </span>
@@ -133,16 +140,15 @@ export default function Skills() {
                       whileInView={{ width: "98%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
-              {/* Skill Tile: Framer Motion */}
+
+              {/* Framer Motion */}
               <div className="group flex flex-col gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 hover:border-[#ff00bf]/40 transition-all duration-300 shadow-sm dark:shadow-none">
                 <div className="flex items-center justify-between">
-                  <span className="material-symbols-outlined text-[#ff00bf] text-3xl transition-transform group-hover:scale-110">
-                    motion_mode
-                  </span>
+                  <SiFramer className="text-[#0055FF] text-3xl transition-transform group-hover:scale-110" />
                   <span className="text-[10px] uppercase tracking-widest text-[#ff00bf] font-bold px-2 py-1 rounded bg-[#ff00bf]/10">
                     Intermediate
                   </span>
@@ -158,32 +164,31 @@ export default function Skills() {
                       whileInView={{ width: "70%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
-              {/* Skill Tile: Three.js */}
+
+              {/* Redux */}
               <div className="group flex flex-col gap-4 p-5 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 hover:border-[#ff00bf]/40 transition-all duration-300 shadow-sm dark:shadow-none">
                 <div className="flex items-center justify-between">
-                  <span className="material-symbols-outlined text-[#ff00bf] text-3xl transition-transform group-hover:scale-110">
-                    view_in_ar
-                  </span>
+                  <SiRedux className="text-[#764ABC] text-3xl transition-transform group-hover:scale-110" />
                   <span className="text-[10px] uppercase tracking-widest text-[#ff00bf] font-bold px-2 py-1 rounded bg-[#ff00bf]/10">
-                    Learning
+                    Advanced
                   </span>
                 </div>
                 <div>
                   <h3 className="text-slate-900 dark:text-white font-bold text-lg">
-                    Three.js
+                    Redux Toolkit
                   </h3>
                   <div className="w-full bg-slate-200 dark:bg-white/10 h-1.5 mt-3 rounded-full overflow-hidden">
                     <motion.div
                       className="bg-gradient-to-r from-[#ff00bf] to-pink-400 h-full shadow-[0_0_8px_rgba(255,0,191,0.5)]"
                       initial={{ width: 0 }}
-                      whileInView={{ width: "40%" }}
+                      whileInView={{ width: "85%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
@@ -193,9 +198,7 @@ export default function Skills() {
           {/* Backend Block (4 columns) */}
           <div className="lg:col-span-4 glass-card rounded-2xl p-8 flex flex-col border border-primary/10 dark:border-white/10 shadow-lg dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] bg-white/50 dark:bg-[rgba(255,0,191,0.03)] backdrop-blur-xl">
             <div className="flex items-center gap-3 mb-8">
-              <span className="material-symbols-outlined text-[#ff00bf] text-3xl">
-                database
-              </span>
+              <FaDatabase className="text-[#ff00bf] text-3xl" />
               <h2 className="text-slate-900 dark:text-white text-2xl font-bold tracking-tight">
                 Backend
               </h2>
@@ -204,9 +207,7 @@ export default function Skills() {
               {/* Node.js */}
               <div className="flex items-center gap-4 p-4 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 shadow-sm dark:shadow-none">
                 <div className="size-12 flex items-center justify-center rounded-lg bg-[#ff00bf]/10 border border-[#ff00bf]/20">
-                  <span className="material-symbols-outlined text-[#ff00bf]">
-                    javascript
-                  </span>
+                  <FaNodeJs className="text-[#339933] text-2xl transition-transform group-hover:scale-110" />
                 </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-1">
@@ -224,16 +225,15 @@ export default function Skills() {
                       whileInView={{ width: "85%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
+
               {/* PostgreSQL */}
               <div className="flex items-center gap-4 p-4 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 shadow-sm dark:shadow-none">
                 <div className="size-12 flex items-center justify-center rounded-lg bg-[#ff00bf]/10 border border-[#ff00bf]/20">
-                  <span className="material-symbols-outlined text-[#ff00bf]">
-                    storage
-                  </span>
+                  <SiPostgresql className="text-[#336791] text-2xl transition-transform group-hover:scale-110" />
                 </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-1">
@@ -251,16 +251,15 @@ export default function Skills() {
                       whileInView={{ width: "90%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
+
               {/* MongoDB */}
               <div className="flex items-center gap-4 p-4 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 shadow-sm dark:shadow-none">
                 <div className="size-12 flex items-center justify-center rounded-lg bg-[#ff00bf]/10 border border-[#ff00bf]/20">
-                  <span className="material-symbols-outlined text-[#ff00bf]">
-                    table_rows
-                  </span>
+                  <SiMongodb className="text-[#47A248] text-3xl transition-transform group-hover:scale-110" />
                 </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-1">
@@ -278,16 +277,15 @@ export default function Skills() {
                       whileInView={{ width: "80%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
+
               {/* GraphQL */}
               <div className="flex items-center gap-4 p-4 rounded-xl bg-white/40 dark:bg-white/5 border border-primary/5 dark:border-white/10 shadow-sm dark:shadow-none">
                 <div className="size-12 flex items-center justify-center rounded-lg bg-[#ff00bf]/10 border border-[#ff00bf]/20">
-                  <span className="material-symbols-outlined text-[#ff00bf]">
-                    hub
-                  </span>
+                  <SiGraphql className="text-[#E10098] text-3xl transition-transform group-hover:scale-110" />
                 </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-center mb-1">
@@ -305,16 +303,28 @@ export default function Skills() {
                       whileInView={{ width: "75%" }}
                       transition={{ duration: 1, ease: "easeOut" }}
                       viewport={{ once: true }}
-                    ></motion.div>
+                    />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Tools & Cloud (Full Width Bottom or 2/3) */}
-          <div className="lg:col-span-12 glass-card rounded-2xl p-8 mt-2 border border-primary/10 dark:border-white/10 shadow-lg dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] bg-white/50 dark:bg-[rgba(255,0,191,0.03)] backdrop-blur-xl">
-            <div className="flex items-center gap-3 mb-8">
+        <div className="relative z-50 border-t my-4 lg:my-12 border-[#25213b]">
+          {/* glow */}
+          <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 blur-3xl opacity-20"></div>
+
+          {/* top divider */}
+          <div className="flex justify-center -translate-y-[1px]">
+            <div className="w-3/4">
+              <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent w-full" />
+            </div>
+          </div>
+
+          {/* title */}
+          <div className="flex justify-center my-5 lg:py-8">
+            <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#ff00bf] text-3xl">
                 construction
               </span>
@@ -322,67 +332,44 @@ export default function Skills() {
                 Tools &amp; Ecosystem
               </h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {/* Docker */}
-              <div className="flex flex-col items-center gap-3 p-6 rounded-xl border border-primary/5 dark:border-white/5 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 transition-colors shadow-sm dark:shadow-none">
-                <span className="material-symbols-outlined text-[#ff00bf] text-4xl">
-                  box
-                </span>
-                <span className="text-slate-900 dark:text-white font-medium">
-                  Docker
-                </span>
-              </div>
-              {/* Git */}
-              <div className="flex flex-col items-center gap-3 p-6 rounded-xl border border-primary/5 dark:border-white/5 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 transition-colors shadow-sm dark:shadow-none">
-                <span className="material-symbols-outlined text-[#ff00bf] text-4xl">
-                  account_tree
-                </span>
-                <span className="text-slate-900 dark:text-white font-medium">
-                  Git / GitHub
-                </span>
-              </div>
-              {/* AWS */}
-              <div className="flex flex-col items-center gap-3 p-6 rounded-xl border border-primary/5 dark:border-white/5 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 transition-colors shadow-sm dark:shadow-none">
-                <span className="material-symbols-outlined text-[#ff00bf] text-4xl">
-                  cloud
-                </span>
-                <span className="text-slate-900 dark:text-white font-medium">
-                  AWS
-                </span>
-              </div>
-              {/* Figma */}
-              <div className="flex flex-col items-center gap-3 p-6 rounded-xl border border-primary/5 dark:border-white/5 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 transition-colors shadow-sm dark:shadow-none">
-                <span className="material-symbols-outlined text-[#ff00bf] text-4xl">
-                  draw
-                </span>
-                <span className="text-slate-900 dark:text-white font-medium">
-                  Figma
-                </span>
-              </div>
-              {/* Jest */}
-              <div className="flex flex-col items-center gap-3 p-6 rounded-xl border border-primary/5 dark:border-white/5 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 transition-colors shadow-sm dark:shadow-none">
-                <span className="material-symbols-outlined text-[#ff00bf] text-4xl">
-                  check_circle
-                </span>
-                <span className="text-slate-900 dark:text-white font-medium">
-                  Jest
-                </span>
-              </div>
-              {/* CI/CD */}
-              <div className="flex flex-col items-center gap-3 p-6 rounded-xl border border-primary/5 dark:border-white/5 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 transition-colors shadow-sm dark:shadow-none">
-                <span className="material-symbols-outlined text-[#ff00bf] text-4xl">
-                  refresh
-                </span>
-                <span className="text-slate-900 dark:text-white font-medium">
-                  CI/CD
-                </span>
-              </div>
-            </div>
+          </div>
+
+          {/* marquee */}
+          <div className="w-full my-8">
+            <Marquee gradient={false} speed={80} pauseOnHover pauseOnClick>
+              {skillsData.map((skill, id) => (
+                <div
+                  key={id}
+                  className="w-36 min-w-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
+                >
+                  <div className="w-full rounded-lg border border-[#1f223c] bg-[#11152c] group-hover:border-violet-500 transition-all duration-500">
+                    {/* card divider */}
+                    <div className="flex -translate-y-[1px] justify-center">
+                      <div className="w-3/4">
+                        <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+                      </div>
+                    </div>
+
+                    {/* content */}
+                    <div className="flex flex-col items-center gap-3 p-6">
+                      <div className="h-8 sm:h-10">
+                        <img
+                          src={skillsImage(skill)}
+                          alt={skill}
+                          className="h-full w-auto rounded-lg"
+                        />
+                      </div>
+                      <p className="text-white text-sm sm:text-lg">{skill}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Marquee>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="relative w-full rounded-2xl overflow-hidden bg-[#ff00bf]/10 border border-[#ff00bf]/30 p-12 text-center group">
+        {/* <div className="relative w-full rounded-2xl overflow-hidden bg-[#ff00bf]/10 border border-[#ff00bf]/30 p-12 text-center group">
           <div className="absolute inset-0 bg-gradient-to-r from-[#ff00bf]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
           <h2 className="text-slate-900 dark:text-white text-3xl font-bold mb-4 relative z-10">
             Ready to build something extraordinary?
@@ -395,7 +382,7 @@ export default function Skills() {
             <span>Get in Touch</span>
             <span className="material-symbols-outlined">send</span>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

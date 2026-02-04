@@ -18,7 +18,7 @@ export default function About() {
       className="relative py-10  lg:py-20 px-4 lg:px-40 container mx-auto"
     >
       <div className="text-center mb-10 relative z-10">
-        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-white">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 dark:text-white">
           About <span className="text-primary">Me</span>
         </h2>
         <div className="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
@@ -57,18 +57,21 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
               <p>
-                Software Engineering Master's student at
-                <span className="font-semibold text-primary"> USTHB</span> and
-                freelance web/mobile developer in Algiers.
+                Full Stack Developer and Computer Science student at
+                <span className="font-semibold text-primary">
+                  {" "}
+                  European University of Bangladesh
+                </span>
+                , focused on building clean and scalable web applications.
               </p>
               <p>
-                I create tailored solutions using
+                I work mainly with the
                 <span className="text-primary font-medium">
                   {" "}
-                  Laravel, React, Flutter
-                </span>
-                , and more for startups and businesses looking to scale their
-                digital presence.
+                  MERN stack
+                </span>{" "}
+                and modern frontend tools to create fast, responsive and
+                user-friendly digital products that solve real-world problems.
               </p>
             </div>
           </div>

@@ -294,16 +294,14 @@ const BackgroundEffect = () => {
         <div className="absolute left-[12%] bottom-[8%] opacity-15 animate-[tech-float-dark_30s_ease-in-out_infinite]">
           <FaNodeJs className="text-3xl text-green-500" />
         </div>
-      </div>
+        {/* ================= TOP RIGHT EXTRA ICONS ================= */}
+        <div className="absolute right-[6%] top-[10%] opacity-20 animate-[tech-float-dark_22s_ease-in-out_infinite]">
+          <SiNextdotjs className="text-3xl text-white" />
+        </div>
 
-      {/* ================= TOP RIGHT EXTRA ICONS ================= */}
-
-      <div className="absolute right-[6%] top-[10%] opacity-20 animate-[tech-float-dark_22s_ease-in-out_infinite]">
-        <SiNextdotjs className="text-3xl text-white" />
-      </div>
-
-      <div className="absolute right-[10%] top-[22%] opacity-15 animate-[tech-float-dark_28s_ease-in-out_infinite]">
-        <SiVercel className="text-3xl text-white" />
+        <div className="absolute right-[10%] top-[22%] opacity-15 animate-[tech-float-dark_28s_ease-in-out_infinite]">
+          <SiVercel className="text-3xl text-white" />
+        </div>
       </div>
     </>
   );

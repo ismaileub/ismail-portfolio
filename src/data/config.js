@@ -6,14 +6,16 @@ export const config = {
     name: "ISMAIL",
     role: "Full Stack Developer",
     description:
-      "Crafting modern, responsive and user-friendly websites with passion and precision. Transforming complex problems into elegant digital experiences.",
+      // "Passionate about crafting efficient and scalable web applications with a focus on clean code and user-centric design. Experienced in both frontend and backend development, I thrive on solving complex problems and delivering seamless digital experiences.",
+      "Passionate MERN-stack web developer seeking to build user-friendly, scalable applications using clean code and modern technologies, while continuously learning and delivering impactful digital solutions.",
     available: true,
   },
   social: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
-    email: "mailto:ismail@example.com",
+    github: "https://github.com/ismaileub",
+    linkedin: "https://linkedin.com/in/ismail-eub",
+    twitter: "https://twitter.com/ismaileub",
+    email:
+      "https://mail.google.com/mail/?view=cm&fs=1&to=ismail301515@gmail.com&su=Contact%20From%20Portfolio&body=Hello%20I%20want%20to%20contact%20you",
   },
   services: [
     {
@@ -209,7 +211,7 @@ export const config = {
       {
         icon: "code",
         label: "GitHub",
-        href: "https://github.com/your-github-username",
+        href: "https://github.com/ismaileub",
         color: "from-gray-700 to-gray-900",
       },
     ],
