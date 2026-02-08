@@ -9,6 +9,7 @@ import Experience from "./sections/Experience";
 import Education from "./sections/Education";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -54,6 +55,20 @@ export default function Home() {
       <div ref={sections.home}>
         <Hero />
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className=" bottom-10 mt-20 flex flex-col items-center"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <span className="text-slate-600 dark:text-slate-400 text-sm mb-2">
+          Scroll to explore
+        </span>
+        <span className="material-symbols-outlined text-slate-600 dark:text-slate-400">
+          arrow_downward
+        </span>
+      </motion.div>
       <div ref={sections.about}>
         <About />
       </div>

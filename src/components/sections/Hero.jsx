@@ -76,7 +76,7 @@ export default function Hero() {
     /* Hero Header */
     <header
       id="home"
-      className="relative min-h-screen pt-20 flex items-center overflow-hidden"
+      className="relative  pt-20 flex items-center overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
         {/* Left side - Text content */}
@@ -100,7 +100,7 @@ export default function Hero() {
             Hi, I'm {personal.name}
           </motion.h1>
 
-          <motion.h2 className="font-display text-4xl md:text-5xl font-bold text-gradient mb-8">
+          <motion.h2 className="font-display text-3xl md:text-5xl font-bold text-gradient mb-8">
             <span ref={textRef}></span>
             <span className="blinking-cursor">|</span>
           </motion.h2>
@@ -171,33 +171,30 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative group cursor-pointer"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full p-1.5 bg-gradient-to-tr from-primary via-pink-500 to-purple-800 overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.4)]">
+            {/* Glow effect strictly behind the circle */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary via-pink-500 to-purple-800 rounded-full blur-[30px] opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10" />
+
+            <div className="w-72 h-72 md:w-96 md:h-96 rounded-full p-1.5 bg-gradient-to-tr from-primary via-pink-500 to-purple-800 overflow-hidden shadow-xl transition-all duration-500 relative">
+              {/* Default Image */}
               <img
                 alt="Profile"
-                className="w-full h-full object-cover rounded-full"
+                className="w-full h-full object-cover rounded-full transition-opacity duration-500 group-hover:opacity-0"
                 src="https://i.ibb.co.com/Y5QLrwF/profile-Me.jpg"
+              />
+              {/* Hover Image */}
+              <img
+                alt="Profile Hover"
+                className="w-full h-full object-cover rounded-full absolute inset-0 p-1.5 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-105 group-hover:scale-100"
+                src="https://res.cloudinary.com/duiwtyjee/image/upload/v1769528300/488641707_18043093400605035_800053857556079585_n_bfaitq.jpg"
               />
             </div>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <span className="text-slate-600 dark:text-slate-400 text-sm mb-2">
-          Scroll to explore
-        </span>
-        <span className="material-symbols-outlined text-slate-600 dark:text-slate-400">
-          arrow_downward
-        </span>
-      </motion.div>
     </header>
   );
 }

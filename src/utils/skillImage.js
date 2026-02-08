@@ -72,6 +72,8 @@ import vuetifyjs from "../public/svg/skills/vuetifyjs.svg";
 import webix from "../public/svg/skills/webix.svg";
 import wolframalpha from "../public/svg/skills/wolframalpha.svg";
 import wordpress from "../public/svg/skills/wordpress.svg";
+import sqlite from "../public/svg/skills/sqlite.svg";
+// import Antigravity from "../public/svg/skills/antigravity.svg";
 
 export const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
@@ -224,7 +226,9 @@ export const skillsImage = (skill) => {
       return wolframalpha;
     case "canva":
       return canva;
+    case "sqlite":
+      return sqlite;
     default:
-      break;
+      return null;
   }
 };
