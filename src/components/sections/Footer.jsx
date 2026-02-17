@@ -6,6 +6,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaGithub,
+  FaDiscord,
 } from "react-icons/fa";
 
 const containerVariants = {
@@ -44,6 +45,11 @@ const socialLinks = [
     icon: <FaGithub />,
     link: "https://github.com",
     color: "#181717",
+  },
+  {
+    icon: <FaDiscord />,
+    link: "https://discord.com",
+    color: "#5865F2",
   },
 ];
 

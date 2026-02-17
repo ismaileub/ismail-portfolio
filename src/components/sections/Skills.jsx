@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 import { skillsData } from "../../data/skills";
 import { skillsImage } from "../../utils/skillImage";
-import { FaReact, FaNodeJs, FaDatabase, FaPalette } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
 import {
   SiTypescript,
   SiNextdotjs,
@@ -12,7 +12,6 @@ import {
   SiRedux,
   SiPostgresql,
   SiMongodb,
-  SiGraphql,
   SiExpress,
   SiVercel,
   SiNetlify,
@@ -24,6 +23,7 @@ import {
   SiRender,
   SiReactquery,
   SiMongoose,
+  SiAxios,
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
 import { AntigravityIcon } from "../../utils/Antigravity";
@@ -45,6 +45,7 @@ export default function Skills() {
     Render: <SiRender className="text-white text-3xl" />,
     "TanStack Query": <SiReactquery className="text-[#FF4154] text-3xl" />,
     Mongoose: <SiMongoose className="text-[#880000] text-3xl" />,
+    Axios: <SiAxios className="text-[#5A29E4] text-3xl" />,
     VSCode: <TbBrandVscode className="text-[#007ACC] text-3xl" />,
     Antigravity: <AntigravityIcon />,
   };
@@ -423,7 +424,7 @@ export default function Skills() {
           {/* title */}
           <div className="flex justify-center my-5 lg:py-8">
             <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#ff00bf] text-4xl">
+              <span className="material-symbols-outlined text-[#ff00bf] text-3xl md:text-5xl">
                 construction
               </span>
               <h2 className="text-slate-900 dark:text-white text-2xl md:text-4xl font-bold tracking-tight">

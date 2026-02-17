@@ -76,7 +76,7 @@ export default function Hero() {
     /* Hero Header */
     <header
       id="home"
-      className="relative  pt-20 flex items-center overflow-hidden"
+      className="relative mt-4  pt-20 flex items-center overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 w-full">
         {/* Left side - Text content */}

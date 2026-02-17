@@ -22,6 +22,7 @@ export const skillsData = [
   "Redux",
   "Sass",
   "VSCode",
+  "Axios",
   "Antigravity",
   "Python",
 ];

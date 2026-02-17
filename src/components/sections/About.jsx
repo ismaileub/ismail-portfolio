@@ -219,6 +219,14 @@ export default function About() {
                   build applications that aren't just functional, but are built
                   for scale and speed. I believe every pixel has a purpose.
                 </p>
+                <p>
+                  I currently serve as the{" "}
+                  <span className="font-bold text-slate-900 dark:text-white border-b-2 border-primary/30">
+                    Vice President of the EUB Programming Club
+                  </span>
+                  , where I collaborate with passionate peers and help drive
+                  community initiatives.
+                </p>
               </motion.div>
             </div>
 

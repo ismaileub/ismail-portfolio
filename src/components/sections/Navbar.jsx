@@ -16,7 +16,7 @@ export default function Navbar({ scrollToSection }) {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w mx-auto px-6 h-20 flex items-center justify-between">
         <motion.div
           className="flex items-center space-x-4"
           whileHover={{ scale: 1.05 }}

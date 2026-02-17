@@ -1,4 +1,4 @@
-import resumeFile from "./Resume(ISMAIL).pdf";
+import resumeFile from "./ResumeOfIsmailHossain.pdf";
 
 export const config = {
   resume: resumeFile,

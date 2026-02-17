@@ -58,11 +58,11 @@ export default function Home() {
 
       {/* Scroll Indicator */}
       <motion.div
-        className=" bottom-10 mt-20 flex flex-col items-center"
+        className=" bottom-10 mt-20  flex-col items-center hidden md:flex"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <span className="text-slate-600 dark:text-slate-400 text-sm mb-2">
+        <span className="text-slate-600 dark:text-slate-400 text-sm">
           Scroll to explore
         </span>
         <span className="material-symbols-outlined text-slate-600 dark:text-slate-400">

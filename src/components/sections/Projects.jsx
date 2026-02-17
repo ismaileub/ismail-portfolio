@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { config } from "../../data/config";
 
@@ -41,7 +41,33 @@ const gridVariants = {
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("fullStack");
+  const [currentPage, setCurrentPage] = useState(1);
   const { projects } = config;
+
+  const ITEMS_PER_PAGE = 3;
+
+  const activeProjects = useMemo(() => {
+    const list = projects?.[activeTab];
+    return Array.isArray(list) ? list : [];
+  }, [projects, activeTab]);
+
+  const totalPages = Math.max(
+    1,
+    Math.ceil(activeProjects.length / ITEMS_PER_PAGE),
+  );
+
+  const paginatedProjects = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return activeProjects.slice(start, start + ITEMS_PER_PAGE);
+  }, [activeProjects, currentPage]);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeTab]);
+
+  useEffect(() => {
+    if (currentPage > totalPages) setCurrentPage(totalPages);
+  }, [currentPage, totalPages]);
 
   const tabs = [
     { id: "fullStack", label: "Full Stack" },
@@ -101,7 +127,7 @@ export default function Projects() {
       {/* Projects Grid */}
       <AnimatePresence mode="wait">
         <motion.div
-          key={activeTab}
+          key={`${activeTab}-${currentPage}`}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
           variants={gridVariants}
           initial="hidden"
@@ -110,16 +136,16 @@ export default function Projects() {
           exit={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
-          {projects[activeTab]?.map((project, idx) => (
+          {paginatedProjects.map((project, idx) => (
             <motion.div
               key={idx}
-              className="glass-card p-5 rounded-3xl flex flex-col h-full group hover:border-primary/50 transition-all duration-300"
+              className="glass-card p-4 rounded-3xl flex flex-col h-full group hover:border-primary/50 transition-all duration-300"
               variants={itemVariants}
               whileHover={{ y: -8 }}
             >
               {/* Project Image */}
               <motion.div
-                className="rounded-2xl overflow-hidden mb-6 aspect-[16/10]"
+                className="rounded-2xl overflow-hidden mb-5 aspect-[16/9]"
                 whileHover={{ scale: 1.05 }}
               >
                 <img
@@ -134,7 +160,7 @@ export default function Projects() {
                 <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8 text-sm">
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6 text-sm">
                   {project.description}
                 </p>
               </div>
@@ -173,6 +199,63 @@ export default function Projects() {
           ))}
         </motion.div>
       </AnimatePresence>
+
+      {/* Pagination */}
+      {activeProjects.length > ITEMS_PER_PAGE && (
+        <div className="relative z-10 mt-10 flex items-center justify-center gap-2 flex-wrap">
+          <motion.button
+            type="button"
+            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            disabled={currentPage === 1}
+            className="px-5 py-2 rounded-full font-semibold transition-all border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary disabled:opacity-50 disabled:hover:border-slate-200 disabled:hover:text-slate-700 dark:disabled:hover:border-white/10 dark:disabled:hover:text-slate-200"
+            whileHover={currentPage === 1 ? undefined : { scale: 1.03 }}
+            whileTap={currentPage === 1 ? undefined : { scale: 0.98 }}
+            aria-label="Previous page"
+          >
+            Prev
+          </motion.button>
+
+          {Array.from({ length: totalPages }).map((_, i) => {
+            const page = i + 1;
+            const isActive = page === currentPage;
+            return (
+              <motion.button
+                key={page}
+                type="button"
+                onClick={() => setCurrentPage(page)}
+                className={`w-10 h-10 rounded-full font-semibold transition-all border ${
+                  isActive
+                    ? "border-transparent text-white"
+                    : "border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary"
+                } relative overflow-hidden`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label={`Go to page ${page}`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {isActive && (
+                  <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600" />
+                )}
+                <span className="relative">{page}</span>
+              </motion.button>
+            );
+          })}
+
+          <motion.button
+            type="button"
+            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            disabled={currentPage === totalPages}
+            className="px-5 py-2 rounded-full font-semibold transition-all border border-slate-200 dark:border-white/10 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary disabled:opacity-50 disabled:hover:border-slate-200 disabled:hover:text-slate-700 dark:disabled:hover:border-white/10 dark:disabled:hover:text-slate-200"
+            whileHover={
+              currentPage === totalPages ? undefined : { scale: 1.03 }
+            }
+            whileTap={currentPage === totalPages ? undefined : { scale: 0.98 }}
+            aria-label="Next page"
+          >
+            Next
+          </motion.button>
+        </div>
+      )}
     </section>
   );
 }
