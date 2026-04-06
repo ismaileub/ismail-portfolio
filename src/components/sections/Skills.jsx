@@ -424,7 +424,7 @@ export default function Skills() {
           {/* title */}
           <div className="flex justify-center my-5 lg:py-8">
             <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-[#ff00bf] text-3xl md:text-5xl">
+              <span className="material-symbols-outlined text-[#ff00bf] !text-3xl lg:!text-5xl leading-none">
                 construction
               </span>
               <h2 className="text-slate-900 dark:text-white text-2xl md:text-4xl font-bold tracking-tight">

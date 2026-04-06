@@ -76,6 +76,19 @@ export const config = {
         },
       },
       {
+        title: "Parcel Delivery System",
+        description:
+          "A full-stack parcel delivery system with user authentication, parcel booking, delivery status tracking, and an admin dashboard to manage parcels and deliveries.",
+        image:
+          "https://res.cloudinary.com/duiwtyjee/image/upload/v1775466571/trust-tack_yyww0i.png",
+        links: {
+          repo: "https://github.com/ismaileub/Parcel-Delivery-Frontend",
+          demo: "https://parcel-delivery-system-frontend-delta.vercel.app",
+        },
+      },
+    ],
+    frontend: [
+      {
         title: "Explore Heaven",
         description:
           "A travel website focused on European destinations, featuring dynamic pages, Firebase authentication, responsive design, and engaging UI for exploring tours and places.",
@@ -86,8 +99,6 @@ export const config = {
           demo: "https://explore-heaven.web.app",
         },
       },
-    ],
-    frontend: [
       {
         title: "Modern Portfolio",
         description:

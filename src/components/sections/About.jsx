@@ -10,6 +10,7 @@ import {
   TbArrowRight,
   TbArrowUpRight,
 } from "react-icons/tb";
+import { config } from "../../data/config";
 
 export default function About() {
   const containerRef = useRef(null);
@@ -90,14 +91,9 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-20 md:mb-24">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-6 font-display neon-text text-slate-900 dark:text-white"
-          >
-            Personal Odyssey
-          </motion.h2>
+          <h2 className="text-slate-900 dark:text-white tracking-tighter text-5xl md:text-7xl font-bold font-display">
+            About <span className="text-primary ">Me</span>
+          </h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -266,12 +262,13 @@ export default function About() {
               className="pt-6"
             >
               <a
-                href="#"
+                href={config.social.email}
+                target="_blank"
                 className="group relative inline-flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-2xl overflow-hidden transition-all hover:pr-12 shadow-xl"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-fuchsia-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10 transition-all group-hover:text-white">
-                  Get Full CV
+                  Hire Me
                 </span>
                 <TbArrowUpRight className="relative z-10 text-xl group-hover:translate-x-4 transition-transform duration-300 group-hover:text-white" />
               </a>

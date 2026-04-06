@@ -32,23 +32,23 @@ const socialLinks = [
   },
   {
     icon: <FaInstagram />,
-    link: "https://instagram.com",
+    link: "https://instagram.com/_i_s_m_ail",
     color: "linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)",
     isGradient: true,
   },
   {
     icon: <FaLinkedinIn />,
-    link: "https://linkedin.com",
+    link: "https://linkedin.com/in/ismail-eub",
     color: "#0A66C2",
   },
   {
     icon: <FaGithub />,
-    link: "https://github.com",
+    link: "https://github.com/ismaileub",
     color: "#181717",
   },
   {
     icon: <FaDiscord />,
-    link: "https://discord.com",
+    link: "https://discord.com/users/ismaileub",
     color: "#5865F2",
   },
 ];

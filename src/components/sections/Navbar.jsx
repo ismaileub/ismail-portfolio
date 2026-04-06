@@ -17,28 +17,29 @@ export default function Navbar({ scrollToSection }) {
       transition={{ duration: 0.5 }}
     >
       <div className="max-w mx-auto px-6 h-20 flex items-center justify-between">
-        <motion.div
-          className="flex items-center space-x-4"
-          whileHover={{ scale: 1.05 }}
-        >
-          <span className="font-display text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
-            {personal.name}
-            <span className="text-primary">&lt;/&gt;</span>
-          </span>
+        <div className="flex items-center gap-2">
+          <motion.div
+            className="flex items-center space-x-4"
+            whileHover={{ scale: 1.05 }}
+          >
+            <span className="font-display text-xl md:text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+              {personal.name}
+              <span className="text-primary">&lt;/&gt;</span>
+            </span>
+          </motion.div>
+          {/* Desktop theme toggle (keeps current desktop layout) */}
           <Button
             onClick={toggleTheme}
             variant="ghost"
             size="icon"
-            className="rounded-full"
+            className=" material-symbols-outlined hidden md:inline-flex rounded-full !text-xl lg:!text-3xl leading-none"
           >
-            <span className="material-symbols-outlined dark:hidden text-slate-700">
-              dark_mode
-            </span>
-            <span className="material-symbols-outlined hidden dark:block text-yellow-400">
+            <span className=" dark:hidden text-slate-700">dark_mode</span>
+            <span className=" hidden dark:block text-yellow-400">
               light_mode
             </span>
           </Button>
-        </motion.div>
+        </div>
         <motion.div className="hidden md:flex items-center space-x-10 text-sm font-medium">
           {[
             "home",
@@ -59,6 +60,23 @@ export default function Navbar({ scrollToSection }) {
             </motion.button>
           ))}
         </motion.div>
+
+        {/* Mobile theme toggle (right side) */}
+        <div className="flex items-center md:hidden">
+          <Button
+            onClick={toggleTheme}
+            variant="ghost"
+            size="icon"
+            className="rounded-full !text-xl leading-none"
+          >
+            <span className="material-symbols-outlined dark:hidden text-slate-700">
+              dark_mode
+            </span>
+            <span className="material-symbols-outlined hidden dark:block text-yellow-400">
+              light_mode
+            </span>
+          </Button>
+        </div>
       </div>
     </motion.nav>
   );
